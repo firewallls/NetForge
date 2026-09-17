@@ -1,0 +1,19 @@
+{
+  "name": "netforge",
+  "version": "1.0.0",
+  "description": "A Network Simulator",
+  "homepage": "https://github.com/firewallls/NetForge#readme",
+  "bugs": {
+    "url": "https://github.com/firewallls/NetForge/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firewallls/NetForge.git"
+  },
+  "license": "ISC",
+  "author": "Moksh",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
