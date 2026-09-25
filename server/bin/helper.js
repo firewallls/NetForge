@@ -1,4 +1,6 @@
-const debug = require("debug")("server:server");
+import debug from 'debug';
+
+const debugServer = debug('server:server');
 
 function onError(error, port) {
   if (error.syscall !== "listen") {
@@ -39,11 +41,7 @@ function normalizePort(val) {
 function onListening(server) {
   const addr = server.address();
   const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
-  debug("Listening on " + bind);
+  debugServer("Listening on " + bind);
 }
 
-module.exports = {
-  normalizePort,
-  onError,
-  onListening,
-};
+export { onError, normalizePort, onListening };

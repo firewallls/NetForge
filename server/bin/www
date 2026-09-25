@@ -1,12 +1,15 @@
 #!/usr/bin/env node
-
-const {normalizePort, onError, onListening} = require('./helper');
-const app = require('../app');
-const http = require('http');
+import dotenv from 'dotenv';
+import {normalizePort, onError, onListening} from './helper.js';
+import app from '../app.js';
+import http from 'http';
+dotenv.config();
 const port = normalizePort(process.env.PORT);
 const server = http.createServer(app);
 
 app.set('port', port);
-server.listen(port);
+server.listen(port, (prt=port) => {
+  console.log(`Server is running on port ${prt}`);
+});
 server.on('error', (error) => onError(error, port));
 server.on('listening', () => onListening(server));
