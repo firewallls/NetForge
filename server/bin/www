@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+const {normalizePort, onError, onListening} = require('./helper');
+const app = require('../app');
+const http = require('http');
+const port = normalizePort(process.env.PORT);
+const server = http.createServer(app);
+
+app.set('port', port);
+server.listen(port);
+server.on('error', (error) => onError(error, port));
+server.on('listening', () => onListening(server));
